@@ -8,13 +8,14 @@
 
 ## 🖥️ UI Preview
 
-![Vibe Code UI](doc/ui_chat.png)
+![Vibe Code UI](doc/ui_chat_v1.1.0.png)
 *Geeky terminal-inspired interface with neon accents and Fira Code typography.*
 
 ---
 
 ## ✨ Key Features
 
+-   **🌐 Multi-language Support**: Switch seamlessly between English and Indonesian. User preference is saved via cookies!
 -   **🧠 Specialized Brain**: Specifically tuned to generate app ideas. No cooking recipes, no history lessons—just pure developer vibes.
 -   **🛠️ Technical Prompt Generator**: Every idea comes with a massive, detailed prompt for "Vibe Coding" (coding via AI prompting).
 -   **📟 Terminal Aesthetic**: A dark, monospaced interface that feels like home for any terminal user.
@@ -77,4 +78,4 @@ The app will be available at `http://localhost:3000`.
 > **TIP :**
 > Try clicking the suggestion buttons like `POS-Madura.sh` to see how the bot generates a full technical specification for you!
 
-**Happy Vibe Coding!** 💻✨
+**Happy Vibe Coding!** 💻✨ (v1.1.0)
