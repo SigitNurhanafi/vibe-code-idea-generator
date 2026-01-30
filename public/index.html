@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[root@vibe-code] /#</title>
+    <meta name="description" content="Tanya apa saja kepada Gemini AI Chatbot yang ditenagai oleh Google Gemini API.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+
+<body>
+    <div class="app-container">
+        <div class="chat-card">
+            <header class="chat-header">
+                <h1>generator</h1>
+                <div class="status-badge">
+                    <span class="dot"></span> session: active
+                </div>
+            </header>
+
+            <div id="chat-messages" class="chat-body">
+                <!-- Messages will be injected here -->
+                <div class="message system">
+                    <div class="message-content">
+                        [SYSTEM]: initialized... vibe_code_idea_generator v1.0.0<br>
+                        [SYSTEM]: ready for input_
+                    </div>
+                </div>
+            </div>
+
+            <div class="suggestions-container" id="suggestions">
+                <button class="suggestion-btn"
+                    data-prompt="Cara bikin POS offline untuk warung Madura">POS-Madura.sh</button>
+                <button class="suggestion-btn"
+                    data-prompt="Aplikasi pencatatan keuangan yang offline">finance-tracker.app</button>
+                <button class="suggestion-btn"
+                    data-prompt="AI Personal Assistant Suite untuk produktivitas">ai-assistant.core</button>
+                <button class="suggestion-btn"
+                    data-prompt="Zen Habit Tracker dengan desain minimalis">zen-habits.vibe</button>
+                <button class="suggestion-btn"
+                    data-prompt="Modern E-commerce Dashboard dengan Tailwind">ecom-dash.sys</button>
+            </div>
+
+            <form id="chat-form" class="chat-footer">
+                <div class="input-wrapper">
+                    <input type="text" id="user-input" placeholder="awaiting_input..." required autocomplete="off">
+                    <button type="submit" id="send-btn">
+                        EXECUTE
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
