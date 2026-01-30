@@ -52,9 +52,10 @@ body::before {
     height: 90vh;
     display: flex;
     flex-direction: column;
-    border: 2px solid var(--border-color);
-    box-shadow: 0 0 20px var(--terminal-glow);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 0 30px rgba(0, 255, 65, 0.15), inset 0 0 10px rgba(0, 255, 65, 0.05);
     background: var(--bg-dark);
+    position: relative;
 }
 
 .chat-card {
@@ -62,41 +63,125 @@ body::before {
     flex-direction: column;
     height: 100%;
     overflow: hidden;
+    position: relative;
 }
 
 .chat-header {
-    padding: 15px 20px;
-    border-bottom: 2px solid var(--border-color);
-    background: var(--terminal-dim);
+    padding: 12px 20px;
+    border-bottom: 1px solid var(--border-color);
+    background: var(--bg-dark);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 
 .chat-header h1 {
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: 700;
     text-transform: lowercase;
+    letter-spacing: 1px;
 }
 
 .chat-header h1::before {
     content: "[root@vibe-code] /# ";
 }
 
-.status-badge {
-    font-size: 0.85rem;
-    color: var(--text-muted);
+.header-left {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.header-subtitle {
+    font-size: 0.65rem;
+    color: var(--terminal-green);
+    opacity: 0.6;
+    letter-spacing: 2px;
+}
+
+.header-right {
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 20px;
+}
+
+.lang-switcher {
+    display: flex;
+    gap: 5px;
+    background: #000;
+    padding: 2px;
+    border: 1px solid var(--terminal-dim);
+}
+
+.lang-btn {
+    background: transparent;
+    border: none;
+    color: var(--terminal-green);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: bold;
+    cursor: pointer;
+    opacity: 0.4;
+    padding: 2px 8px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-transform: uppercase;
+    position: relative;
+}
+
+.lang-btn::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--terminal-dim);
+    border: 1px solid var(--terminal-green);
+    color: var(--terminal-green);
+    padding: 4px 8px;
+    font-size: 0.65rem;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s;
+    z-index: 1000;
+}
+
+.lang-btn:hover::after {
+    opacity: 1;
+}
+
+.lang-btn.active {
+    opacity: 1;
+    background: var(--terminal-green);
+    color: var(--bg-dark);
+    box-shadow: 0 0 10px var(--terminal-glow);
+}
+
+.lang-btn:hover:not(.active) {
+    opacity: 0.8;
+    background: var(--terminal-dim);
+}
+
+.status-badge {
+    font-size: 0.8rem;
+    color: var(--terminal-green);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-left: 1px solid var(--terminal-dim);
+    padding-left: 20px;
 }
 
 .dot {
-    width: 8px;
-    height: 8px;
-    background: #10b981;
-    border-radius: 50%;
+    width: 6px;
+    height: 6px;
+    background: var(--terminal-green);
+    border-radius: 0;
+    /* Square dot looks more terminal-like */
     display: inline-block;
+    box-shadow: 0 0 8px var(--terminal-green);
+    animation: blink 1.5s step-end infinite;
 }
 
 .chat-body {
